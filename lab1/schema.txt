@@ -1,0 +1,11 @@
+--Downtown Video Schema
+films(filmID, title, description, rating, length) --ID is the key
+customer(custID, firstName, lastName, email, addessID) --custID is the key
+address(addrID, street, city, state, postalCode, phoneNumber) --addrID is the
+key
+
+
+--City Books Schema
+books(bookID, title, authorID) --bookID is the key
+authors(authorID, firstName, lastName) --authorID is the key
+customer(custID, firstName, lastName, phone) --custID is the key
