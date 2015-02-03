@@ -1,0 +1,67 @@
+COPY scores1 FROM stdin WITH NULL AS 'null';
+Dragons	Sunday	Swallows	4
+Tigers	Sunday	Bay Stars	9
+Carp	Sunday	Giants	2
+Swallows	Sunday	Dragons	7
+Bay Stars	Sunday	Tigers	2
+Giants	Sunday	Carp	4
+Dragons	Monday	Carp	6
+Tigers	Monday	Bay Stars	5
+Carp	Monday	Dragons	3
+Swallows	Monday	Giants	0
+Bay Stars	Monday	Tigers	7
+Giants	Monday	Swallows	5
+\.
+
+COPY scores2 FROM stdin WITH NULL AS 'NULL';
+Dragons	Sunday	Swallows	4
+Tigers	Sunday	Bay Stars	9
+Carp	Sunday	NULL	NULL
+Swallows	Sunday	Dragons	7
+Bay Stars	Sunday	Tigers	2
+Giants	Sunday	NULL	NULL
+Dragons	Monday	Carp	NULL
+Tigers	Monday	NULL	NULL
+Carp	Monday	Dragons	NULL
+Swallows	Monday	Giants	0
+Bay Stars	Monday	NULL	NULL
+Giants	Monday	Swallows	5
+\.
+
+COPY Arc FROM stdin;
+1	2
+1	2
+2	3
+3	4
+3	4
+4	1
+4	1
+4	1
+4	2
+\.
+
+COPY R FROM stdin;
+0	1
+1	0
+1	1
+\.
+
+COPY S FROM stdin;
+0	1
+1	0
+1	1
+\.
+
+COPY T FROM stdin;
+0	1
+1	0
+1	1
+\.
+
+COPY last FROM stdin;
+5	5	5
+3	7	5
+0	9	5
+1	5	5
+3	4	5
+\.

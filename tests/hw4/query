@@ -1,0 +1,32 @@
+SELECT * 
+FROM scores1;
+
+SELECT Opponent, COUNT(*), AVG(Runs)
+     FROM Scores1
+     GROUP BY Opponent;
+
+SELECT Team, Min(Opponent), Max(Runs)
+     FROM Scores2
+     GROUP BY Team;
+
+SELECT *
+     FROM Scores2
+     ORDER BY Runs DESC, Team ASC;
+
+SELECT a1.x, a2.y, COUNT(*)
+FROM arc a1, arc a2
+WHERE a1.y = a2.x
+GROUP BY a1.x, a2.y;
+
+SELECT A, F, SUM(C), SUM(D)
+     FROM R, S, T
+     WHERE B = C AND D = E
+     GROUP BY A, F
+     HAVING COUNT(*) > 1;
+
+select *
+from arc;
+
+SELECT a, b, c
+FROM last
+ORDER BY c DESC, b ASC;

@@ -1,0 +1,39 @@
+CREATE TABLE scores1 (
+	team VARCHAR(80),
+	day VARCHAR(80),
+	opponent VARCHAR(80),									
+	runs INTEGER
+);
+
+CREATE TABLE scores2 (
+        team VARCHAR(80),
+        day VARCHAR(80),
+        opponent VARCHAR(80),
+        runs INTEGER
+);
+
+CREATE TABLE arc (
+	x integer,
+	y integer
+);
+
+CREATE TABLE R (
+	a integer,
+	b integer
+);
+
+CREATE TABLE S (
+	c INTEGER,
+	d INTEGER
+);
+
+CREATE TABLE T (
+	e INTEGER,
+	F INTEGER
+);
+
+CREATE TABLE last (
+	a INTEGER,
+	b INTEGER,
+	c INTEGER
+);
