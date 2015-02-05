@@ -6,3 +6,4 @@ DROP TABLE cb_books;
 DROP TABLE cb_authors;
 DROP TYPE mpaa_rating;
 DROP TABLE mg_customers;
+DROP SEQUENCE mg_customers_seq;

@@ -38,7 +38,7 @@ CREATE TABLE dv_film (
 -- City Books
 
 CREATE TABLE cb_customers (
-    laste_name      VARCHAR(50),
+    last_name      VARCHAR(50),
     first_name      VARCHAR(50)
 );
 
