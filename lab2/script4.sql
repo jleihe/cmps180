@@ -13,15 +13,43 @@ SELECT m.address_id
 FROM dv_customer AS m, cb_customers AS c
 WHERE m.first_name || m.last_name = c.first_name || c.last_name);
 
--- Query 3. What are the first and last names of all customers who live in the district having the most customers?
+-- Query 3
 
 SELECT first_name, last_name
 FROM dv_customer
 WHERE address_id IN (
-	SELECT 
+    SELECT address_id
+    FROM dv_address
+    WHERE district IN (
+	    SELECT district
+        FROM dv_address
+        GROUP BY district
+        HAVING COUNT(*) >= ALL (
+            SELECT COUNT(*)
+            FROM dv_address
+            GROUP BY district)
+    )
+);
 
--- Query 4. What rating is the least common among films in the Downtown Video database, and how many films have that rating? (Return both the rating and the number of films in one result.)
+-- Query 4
 
+SELECT rating, COUNT(*)
+FROM dv_film
+GROUP BY rating
+HAVING COUNT(*) <= ALL (
+    SELECT COUNT(*)
+    FROM dv_film
+    GROUP BY rating
+);
 
--- Query 5. What are the first and last names of the top 10 authors when ranked by the number of books each has written?
+-- Query 5
 
+SELECT first_name, last_name
+FROM cb_authors
+WHERE author_id IN (
+    SELECT author_id
+    FROM cb_books
+    GROUP BY author_id
+    ORDER BY COUNT(*) DESC
+    LIMIT 10
+);
