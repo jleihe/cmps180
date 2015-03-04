@@ -35,6 +35,8 @@ public class StoreApplication {
 			int minLength, int maxLength) {
 		List<String> result = new LinkedList<String>();
 
+        PreparedStatement pstmt = con.prepareStatement("SELECT EMPLOYEES SET SALARY = ? WHERE ID = ?");
+
 		return result;
 	}
 

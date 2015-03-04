@@ -19,8 +19,8 @@ public class Driver
 
    	Class.forName("org.postgresql.Driver");  //Registering the driver
     connection = DriverManager.getConnection(
-            "jdbc:postgresql://cmps182-db.lt.ucsc.edu/database",
-            "username", "password");  //Making the Connection 
+            "jdbc:postgresql://cmps180-db.lt.ucsc.edu/jleihe",
+            "jleihe", "drawer49card");  //Making the Connection 
 
     StoreApplication app = new StoreApplication();
 
