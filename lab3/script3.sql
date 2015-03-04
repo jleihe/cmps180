@@ -1,6 +1,6 @@
 ALTER TABLE dv_film ADD CONSTRAINT positive_length CHECK (length > 0);
 
-UPDATE mg_customers SET address_id = 1 WHERE address_id = NULL;
+UPDATE mg_customers SET address_id = 1 WHERE address_id IS NULL;
 
 ALTER TABLE mg_customers ALTER COLUMN address_id SET NOT NULL;
 
