@@ -25,8 +25,13 @@ public class Driver
     StoreApplication app = new StoreApplication();
 
     List<String> phoneNumbers =
-        app.getCustomerPhoneFromFirstLastName(connection, "John",
+        app.getCustomerPhoneFromFirstLastName(connection, "Mary",
                 "Smith");
+	//test
+	for (int i = 0; i < phoneNumbers.size(); i++) {
+		String s = (String) phoneNumbers.get(i);
+		System.out.println( "Result # " + i + " is " + s);
+	}
     
     List<String> filmTitles =
         app.getFilmTitlesBasedOnLengthRange(connection, 60, 120);

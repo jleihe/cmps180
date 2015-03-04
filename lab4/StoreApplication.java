@@ -23,6 +23,16 @@ public class StoreApplication {
 			String firstName, String lastName) {
 		List<String> result = new ArrayList<String>();
 
+		try {
+			PreparedStatement query = connection.prepareStatement("SELECT phone FROM dv_address AS d, mg_customers AS m WHERE first_name = ? AND last_name = ? AND d.address_id = m.address_id");
+			query.setString(1, firstName);
+			query.setString(2, lastName);
+			ResultSet qResult = query.executeQuery();
+
+			while (qResult.next()) {
+			   result.add(qResult.getString(1));
+			} qResult.close();
+		} catch (SQLException e) {}
 		return result;
 	}
 
@@ -35,7 +45,7 @@ public class StoreApplication {
 			int minLength, int maxLength) {
 		List<String> result = new LinkedList<String>();
 
-        PreparedStatement pstmt = con.prepareStatement("SELECT EMPLOYEES SET SALARY = ? WHERE ID = ?");
+        //PreparedStatement pstmt = connection.prepareStatement("");
 
 		return result;
 	}
